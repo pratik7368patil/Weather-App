@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100vw;
+}
+
+.search-container {
+	height: 10%;
+	width: 100%;
+}
+
+.search-field {
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-bottom: 2px solid black;
+}
+
+.search-field:focus {
+	outline: none;
+}
+
+.info-card {
+	height: 120px;
+	width: 120px;
+	border: 1px solid lightgray;
+	border-bottom: 3px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px;
+}
+
+.info-card-title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.info-card-body {
+	color: gray;
+	font-size: 22px;
+}
+
+.temperature-data {
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+.wish-and-logo {
+	display: flex;
+	align-items: center;
+}
+
+#logo {
+	margin-left: 40px;
+}
+
+#wish {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#temperature {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.text-mute {
+	color: gray;
+}
+
+@media (max-width: 450px) {
+	.temperature-data {
+		height: 250px;
+	}
+}
