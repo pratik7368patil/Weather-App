@@ -21,7 +21,7 @@ const getApiData = (city) => {
 			showAlert('Got Your City!', true);
 			return weather.json();
 		} else {
-			showAlert('Oops Not Found!', false);
+			showAlert('Oops City Not Found!', false);
 		}
 	}).then(displayResults);
 }
@@ -76,7 +76,7 @@ const displayResults = (weather) => {
 	uiComponents.pressure.innerText = weather.main.pressure;
 	uiComponents.description.innerText = weather.weather[0].description;
 	uiComponents.main.innerText = weather.weather[0].main;
-	uiComponents.city.innerText = `${weather.name}, ${weather.sys.country}`;
+	uiComponents.city.innerText = `${weather.name} ${weather.sys.country ? ', ' + weather.sys.country : ''}`;
 	uiComponents.wind.innerText = weather.wind.speed;
 	uiComponents.visibility.innerText = weather.visibility / 1000;
 
