@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -13,16 +13,16 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 mb-4">
+                <div class="col-sm-6 mb-4 mt-3">
                     <div class="weather-status">
-                        <input type="text" name="search" id="search" class="search-field" placeholder="Search For City ...">
-                        <div class="wish-and-logo">
+                        <input type="text" name="search" id="search" class="search-field" placeholder="Search For City...">
+                        <div class="wish-and-icon">
                             <div class="wish">
                                 <span id="wish">Good Morning</span><br/>
                                 <span class="text-mute" id="date"></span>
                             </div>
-                            <div class="logo" id="logo">
-                                <img src="./images/hot-weather.svg" height="80px" width="80px" />
+                            <div class="icon" id="icon">
+                                <img src="./images/unknown.svg" height="80px" width="80px" />
                             </div>
                         </div>
                     </div>
@@ -39,15 +39,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 extra-info-section">
+
+                <div class="col-sm-6 extra-info-section mb-4 mt-4">
+                    <div class="row">
+                        <div class="info-card">
+                            <p class="info-card-title">Sunrise</p>
+                            <p class="info-card-body"><span id="sunrise">100</span></p>
+                        </div>
+                        <div class="info-card">
+                            <p class="info-card-title">Sunset</p>
+                            <p class="info-card-body"><span id="sunset">10</span></p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="info-card">
                             <p class="info-card-title">Feels Like</p>
-                            <p class="info-card-body" id="feels_like">100</p>
+                            <p class="info-card-body"><span id="feels_like">100</span> &#8451;</p>
                         </div>
                         <div class="info-card">
                             <p class="info-card-title">Humidity</p>
-                            <p class="info-card-body" id="humidity">100</p>
+                            <p class="info-card-body"><span id="humidity">10</span> %</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="info-card-title">Visibility</p>
+                            <p class="info-card-body"><span id="visibility">10</span> mi</p>
                         </div>
                     </div>
                     <div class="row">
@@ -57,20 +72,15 @@
                         </div>
                         <div class="info-card">
                             <p class="info-card-title">Wind Speed</p>
-                            <p class="info-card-body"> <span id="wind">1</span> km/hr</p>
+                            <p class="info-card-body"> <span id="wind">1</span> mph</p>
                         </div>
-                        
-                    </div>
+                    </div>    
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="weather-container-main">
-        
-    </section>
-
-    <!-- Optional JavaScript; choose one of the two! -->
+    <div id="alert_status"></div>
 
     <script type="text/javascript" src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

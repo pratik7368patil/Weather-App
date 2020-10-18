@@ -4,6 +4,10 @@ body {
 	box-sizing: border-box;
 	height: 100vh;
 	width: 100vw;
+	color: white;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/back.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .search-container {
@@ -16,19 +20,24 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 0;
-	border-bottom: 2px solid black;
+	color: white;
+	border-bottom: 2px solid white;
+	background: transparent;
+}
+
+.search-field::placeholder {
+	color: lightgray;
 }
 
 .search-field:focus {
 	outline: none;
+	background: transparent;
 }
 
 .info-card {
 	height: 120px;
 	width: 120px;
-	border: 1px solid lightgray;
-	border-bottom: 3px solid black;
-	border-radius: 5px;
+	border-bottom: 1px solid white;
 	padding: 10px;
 	margin: 5px;
 }
@@ -36,10 +45,12 @@ body {
 .info-card-title {
 	font-weight: bold;
 	font-size: 16px;
+	color: lightgray;
 }
 
 .info-card-body {
-	color: gray;
+	color: white;
+	font-weight: bold;
 	font-size: 22px;
 }
 
@@ -51,12 +62,12 @@ body {
 }
 
 
-.wish-and-logo {
+.wish-and-icon {
 	display: flex;
 	align-items: center;
 }
 
-#logo {
+#icon {
 	margin-left: 40px;
 }
 
@@ -71,11 +82,63 @@ body {
 }
 
 .text-mute {
-	color: gray;
+	color: lightgray;
 }
 
 @media (max-width: 450px) {
 	.temperature-data {
 		height: 250px;
 	}
+}
+
+/* Animated snackbar from here */
+
+.ok {
+	background-color: #65C58A;
+}
+
+.error {
+	background-color: #E22F4D;
+}
+
+#alert_status {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#alert_status.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
