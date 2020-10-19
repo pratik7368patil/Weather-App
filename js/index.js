@@ -31,6 +31,7 @@ const getApiData = (city) => {
 const getUserInput = (event) => {
 	if(event.keyCode === 13) {
 		getApiData(event.target.value);
+		event.target.value = '';
 	}
 }
 
