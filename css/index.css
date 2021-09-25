@@ -1,16 +1,21 @@
+:root {
+  --mainFontColor: #1c493c;
+  --muteFontColor: #1c493c80;
+  --hoverBackColor: #bbe8df80;
+  --borderColor: #1c493c80;
+  --textColor: #2b2b2b;
+  --infoBackColor: #f3f8f7;
+  --backgroundColor50: #bbe8df50;
+  --backgroundColor90: #bbe8df90;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-  color: white;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url("../images/back1.jpeg");
+  color: var(--textColor);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -22,28 +27,32 @@ body {
 }
 
 .custom-input-field {
-  padding: 5px;
+  padding: 10px 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 49.4%;
   border: 0;
-  color: white;
-  border-bottom: 2px solid white;
-  background: transparent;
+  color: var(--textColor);
+  border-radius: 30px;
+  background: var(--backgroundColor50);
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
 }
-
 .custom-input-field::placeholder {
-  color: lightgray;
+  color: #1c493c80;
 }
-
 .custom-input-field:focus {
   outline: none;
-  background: transparent;
+  background: var(--backgroundColor90);
+  border: 2px solid var(--borderColor);
 }
 
 .info-card {
   height: 120px;
   width: 120px;
-  border-bottom: 1px solid white;
+  background: var(--infoBackColor);
+  color: var(--mainFontColor);
+  border-radius: 5px;
   padding: 10px;
   margin: 5px;
 }
@@ -51,11 +60,9 @@ body {
 .info-card-title {
   font-weight: bold;
   font-size: 16px;
-  color: lightgray;
 }
 
 .info-card-body {
-  color: white;
   font-weight: bold;
   font-size: 22px;
 }
@@ -92,20 +99,30 @@ body {
 }
 
 .default-card {
-  border: 1px solid gray;
   padding: 10px;
   border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
+  background: #f3f8f7;
+  border: 2px solid #f3f8f7;
+  color: #1c493c;
+}
+.default-card:hover {
+  background: #bbe8df80;
+}
+.default-card.active {
+  border: 2px solid #1c493c80;
 }
 
-.default-card.active {
-  background: rgba(116, 115, 115, 0.7);
+.d-card-head {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .d-card-end {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .d-card-end span {
@@ -117,8 +134,8 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.253);
   backdrop-filter: blur(10px);
@@ -130,16 +147,21 @@ body {
 }
 
 .add-new-city {
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f3f8f7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.add-new-city:hover {
+  background: #bbe8df80;
 }
 
 .plus-icon {
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
+  height: 25px;
+  width: 25px;
 }
 
 .plus-icon img {
@@ -148,7 +170,7 @@ body {
 }
 
 .text-mute {
-  color: lightgray;
+  color: #1c493c80;
 }
 
 .custom-modal-dialog-container {
@@ -168,8 +190,7 @@ body {
 .custom-modal-dialog {
   height: 50%;
   width: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);
+  background-color: #ffffff;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -178,11 +199,12 @@ body {
 }
 
 .custom-modal-dialog .input-field {
-  width: 40%;
+  width: 60%;
 }
 
 .custom-modal-dialog .input-field input {
   width: 100%;
+  padding: 10px 20px;
 }
 
 .custom-model-head {
@@ -193,23 +215,27 @@ body {
 .custom-btn {
   width: 100px;
   height: 50px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
+  background-color: #bbe8df20;
+  color: #1c493c;
+  border: 2px solid #1c493c80;
+  border-radius: 5px;
   margin: 10px;
+  transition: all 0.4s ease;
+}
+.custom-btn:hover {
+  background-color: #1c493c40;
 }
 
 .custom-btn.add {
-  background-color: white;
-  color: black;
+  background-color: #1c493c80;
+  border: none;
+  color: #ffffff;
 }
 
 .custom-btn.add:hover {
-  color: white;
-}
-
-.custom-btn:hover {
-  background-color: rgb(51, 51, 51);
+  border: 2px solid #1c493c80;
+  background-color: #bbe8df80;
+  color: var(--textColor);
 }
 
 .hide {
@@ -227,7 +253,7 @@ body {
 }
 
 .error {
-  background-color: #e22f4d;
+  background-color: #b1001e;
 }
 
 #alert_status {

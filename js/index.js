@@ -146,7 +146,9 @@
       uiComponents.humidity.innerText = weather.main.humidity;
       uiComponents.feelsLike.innerText = weather.main.feels_like;
       uiComponents.pressure.innerText = weather.main.pressure;
-      uiComponents.description.innerText = weather.weather[0].description;
+      uiComponents.description.innerText =
+        weather.weather[0].description.charAt(0).toUpperCase() +
+        weather.weather[0].description.slice(1);
       uiComponents.main.innerText = weather.weather[0].main;
       uiComponents.wind.innerText = weather.wind.speed;
       uiComponents.visibility.innerText = weather.visibility / 1000;
@@ -252,7 +254,7 @@
       update(cityName);
     });
 
-    document.querySelector(".plus-icon").addEventListener("click", () => {
+    document.querySelector(".add-new-city").addEventListener("click", () => {
       customModel.classList.remove("hide");
     });
 

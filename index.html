@@ -28,16 +28,28 @@
     <!--Search issue has beed fixed-->
     <section>
       <div class="container">
+        <div class="row weather-city mt-4">
+          <div class="col-md-1 mb-2 add-new-city">
+            <div class="plus-icon">
+              <img src="./images/plus.svg" />
+            </div>
+          </div>
+          <div class="col-md-11">
+            <div class="row" id="add-new-weather-city"></div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-sm-6 mb-4 mt-3">
             <div class="weather-status">
-              <input
-                type="text"
-                name="search"
-                id="search"
-                class="custom-input-field search-field"
-                placeholder="Search For City..."
-              />
+              <div class="search-field">
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  class="custom-input-field"
+                  placeholder="Search for a City..."
+                />
+              </div>
               <div class="wish-and-icon">
                 <div class="wish">
                   <span id="wish">Good Morning</span><br />
@@ -95,22 +107,14 @@
             </div>
           </div>
         </div>
-        <div class="row weather-city">
-          <div class="col-md-10">
-            <div class="row" id="add-new-weather-city"></div>
-          </div>
-          <div class="col-md-2 add-new-city">
-            <div class="plus-icon">
-              <img src="./images/plus.svg" />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <div class="custom-modal-dialog-container hide">
       <div class="custom-modal-dialog">
-        <div class="custom-model-head">Add new City to access it quickly!</div>
+        <div class="custom-model-head">
+          Add new location to access it quickly!
+        </div>
         <div class="input-field">
           <input
             type="text"
@@ -127,6 +131,7 @@
 
     <div id="alert_status"></div>
 
+    <script type="text/javascript" src="./js/util.js"></script>
     <script type="text/javascript" src="./js/card_generator.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script
